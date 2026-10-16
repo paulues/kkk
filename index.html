@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>가을 대천 모임 여행 일정 안내</title>
+<style>
+:root {
+--primary-color: #1e3a8a;
+--secondary-color: #3b82f6;
+--accent-color: #f59e0b;
+--bg-color: #f8fafc;
+--card-bg: #ffffff;
+--text-color: #1e293b;
+--subtext-color: #64748b;
+--border-color: #e2e8f0;
+}
+
+* {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+body {
+background-color: var(--bg-color);
+color: var(--text-color);
+line-height: 1.6;
+padding-bottom: 30px;
+}
+
+header {
+background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+color: white;
+text-align: center;
+padding: 24px 16px;
+border-bottom-left-radius: 20px;
+border-bottom-right-radius: 20px;
+box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+font-size: 1.5rem;
+margin-bottom: 6px;
+}
+
+header p {
+font-size: 0.9rem;
+opacity: 0.9;
+}
+
+/* Tab Navigation */
+.nav-tabs {
+display: flex;
+justify-content: space-around;
+background: var(--card-bg);
+margin: 16px;
+padding: 6px;
+border-radius: 12px;
+box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+border: 1px solid var(--border-color);
+}
+
+.tab-btn {
+flex: 1;
+padding: 10px 0;
+border: none;
+background: none;
+font-size: 0.95rem;
+font-weight: 600;
+color: var(--subtext-color);
+cursor: pointer;
+border-radius: 8px;
+transition: all 0.2s ease;
+}
+
+.tab-btn.active {
+background: var(--secondary-color);
+color: white;
+box-shadow: 0 2px 4px rgba(59, 130, 246, 0.3);
+}
+
+/* Tab Contents */
+.tab-content {
+display: none;
+padding: 0 16px;
+}
+
+.tab-content.active {
+display: block;
+}
+
+/* Card Styling */
+.card {
+background: var(--card-bg);
+border-radius: 12px;
+padding: 16px;
+margin-bottom: 12px;
+border: 1px solid var(--border-color);
+box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.card-header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 8px;
+}
+
+.time-badge {
+background-color: #e0f2fe;
+color: #0369a1;
+font-weight: bold;
+font-size: 0.85rem;
+padding: 4px 8px;
+border-radius: 6px;
+}
+
+.category-badge {
+font-size: 0.75rem;
+padding: 2px 6px;
+border-radius: 4px;
+background-color: #f1f5f9;
+color: var(--subtext-color);
+}
+
+.card-title {
+font-size: 1.1rem;
+font-weight: bold;
+margin-bottom: 6px;
+color: var(--primary-color);
+}
+
+.card-info {
+font-size: 0.88rem;
+color: var(--subtext-color);
+margin-bottom: 4px;
+}
+
+.card-note {
+font-size: 0.85rem;
+color: #d97706;
+background-color: #fffbeb;
+padding: 8px;
+border-radius: 6px;
+margin-top: 8px;
+border-left: 3px solid var(--accent-color);
+}
+
+/* Table Styling */
+.data-table {
+width: 100%;
+border-collapse: collapse;
+margin-top: 8px;
+font-size: 0.88rem;
+}
+
+.data-table th, .data-table td {
+padding: 10px 8px;
+text-align: left;
+border-bottom: 1px solid var(--border-color);
+}
+
+.data-table th {
+background-color: #f1f5f9;
+color: var(--primary-color);
+}
+
+.text-right {
+text-align: right;
+}
+
+.highlight {
+font-weight: bold;
+color: var(--primary-color);
+}
+
+.day-title {
+font-size: 1.1rem;
+font-weight: bold;
+margin: 16px 0 8px 4px;
+color: var(--primary-color);
+}
+
+.map-btn {
+display: inline-block;
+margin-top: 6px;
+font-size: 0.8rem;
+color: #2563eb;
+text-decoration: none;
+font-weight: bold;
+}
+</style>
+</head>
+<body>
+
+<header>
+<h1>가을 대천 모임 여행 🌊</h1>
+<p>일정 : 10/31(토) ~ 11/01(일) | 인원 : 7명</p>
+</header>
+
+<nav class="nav-tabs">
+<button class="tab-btn active" onclick="openTab('schedule')">일정표</button>
+<button class="tab-btn" onclick="openTab('restaurants')">맛집 추천</button>
+<button class="tab-btn" onclick="openTab('spots')">관광지</button>
+<button class="tab-btn" onclick="openTab('expenses')">예상 경비</button>
+</nav>
+
+<!-- 1. 일정표 TAB -->
+<div id="schedule" class="tab-content active">
+<div class="day-title">🗓️ 1일차: 10월 31일 (토)</div>
+
+<div class="card">
+<div class="card-header">
+<span class="time-badge">09:45 경</span>
+<span class="category-badge">이동</span>
+</div>
+<div class="card-title">대전 출발 (6명)</div>
+<div class="card-info">📍 대전 → 대천해수욕장 (약 102km)</div>
+<div class="card-note">💡 약 1시간 30분 소요. 경기 광주 1명은 현지 합류 또는 대전 사전 합류 확정 필요.</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="time-badge">11:30</span>
+<span class="category-badge">숙소</span>
+</div>
+<div class="card-title">숙소 도착, 짐 보관 및 주차</div>
+<div class="card-info">📍 한화리조트 대천 파로스 (충남 보령시 해수욕장3길 11-10)</div>
+<div class="card-note">💡 체크인은 15:00입니다. 짐 보관 사전 문의 필요.</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="time-badge">12:00</span>
+<span class="category-badge">점심</span>
+</div>
+<div class="card-title">점심: 풍미꽃게장게국지</div>
+<div class="card-info">📍 충남 보령시 머드로 64</div>
+<div class="card-info">🔄 대안: 오양손칼국수 (충남 보령시 옥마역길 77)</div>
+<div class="card-note">💡 게국지는 보령 향토 음식입니다.</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="time-badge">13:40 ~ 14:30</span>
+<span class="category-badge">관광 1</span>
+</div>
+<div class="card-title">청라 은행마을 (은행나무 황금터널)</div>
+<div class="card-info">📍 충남 보령시 청라면 오서산길 150-65</div>
+<div class="card-note">💡 상시 개방, 무료. 10월 중순~11월 초 절정.</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="time-badge">14:40 ~ 15:10</span>
+<span class="category-badge">관광 2</span>
+</div>
+<div class="card-title">오서산 자락 억새 (장전저수지 일대)</div>
+<div class="card-info">📍 오서산 자연휴양림 아래 장전저수지</div>
+<div class="card-note">💡 저수지 주변 억새 산책.</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="time-badge">16:00 ~ 17:20</span>
+<span class="category-badge">관광 3</span>
+</div>
+<div class="card-title">개화예술공원</div>
+<div class="card-info">📍 충남 보령시 성주면 성주산로 673-47</div>
+<div class="card-note">💡 09:00~18:00 연중무휴. 입장료 현장 확인 필요 (약 3,000~7,000원).</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="time-badge">18:00</span>
+<span class="category-badge">저녁</span>
+</div>
+<div class="card-title">저녁: 대천해수욕장 조개구이</div>
+<div class="card-info">📍 진주빛조개구이 / 조개까는남자 (대천해수욕장 일대)</div>
+<div class="card-note">💡 7인 예약 필수. 늦어질 경우 식당에 미리 연락 필요.</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="time-badge">19:30 ~</span>
+<span class="category-badge">자유</span>
+</div>
+<div class="card-title">대천해수욕장 야간 산책</div>
+<div class="card-info">📍 충남 보령시 머드로 123</div>
+<div class="card-note">💡 일루미네이션 포토존, 상시 개방/무료.</div>
+</div>
+
+<div class="day-title">🗓️ 2일차: 11월 01일 (일)</div>
+
+<div class="card">
+<div class="card-header">
+<span class="time-badge">08:00 ~ 08:50</span>
+<span class="category-badge">기상</span>
+</div>
+<div class="card-title">기상 및 체크아웃 준비</div>
+<div class="card-note">💡 체크아웃 11:00. 해산이 10:00이므로 아침 식사 전 짐 정리 필요.</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="time-badge">09:00</span>
+<span class="category-badge">아침</span>
+</div>
+<div class="card-title">아침: 서씨네큰댁 복지리</div>
+<div class="card-info">📍 충남 보령시 대천항로 313</div>
+<div class="card-info">🔄 대안: 리조트 조식 뷔페</div>
+<div class="card-note">💡 07:00부터 영업. 방문 전 영업 재확인 권장.</div>
+</div>
+
+<div class="card">
+<div class="card-header">
+<span class="time-badge">10:00</span>
+<span class="category-badge">해산</span>
+</div>
+<div class="card-title">해산 (각자 귀가)</div>
+</div>
+</div>
+
+<!-- 2. 맛집 추천 TAB -->
+<div id="restaurants" class="tab-content">
+<div class="card">
+<div class="card-title">🍲 점심 1순위: 풍미꽃게장게국지</div>
+<div class="card-info"><b>대표메뉴:</b> 게국지 소(2인) 50,000원, 간장/양념게장</div>
+<div class="card-info"><b>주소:</b> 충남 보령시 머드로 64</div>
+<div class="card-info"><b>평점:</b> 4.2점 (뼠레)</div>
+<div class="card-note">💡 해변 인근, 주차 공간 소수, 예약 가능 (7인 예약 권장).</div>
+</div>
+
+<div class="card">
+<div class="card-title">🍲 점심 2순위: 오양손칼국수</div>
+<div class="card-info"><b>대표메뉴:</b> 비오키 칼제비 1인 13,000원</div>
+<div class="card-info"><b>주소:</b> 충남 보령시 옥마역길 77</div>
+<div class="card-info"><b>영업시간:</b> 10:30~19:00 (월요일 휴무)</div>
+<div class="card-note">💡 웨이팅이 길어 테이블링 원격 줄서기 활용 추천.</div>
+</div>
+
+<div class="card">
+<div class="card-title">🦪 저녁 1순위: 진주빛조개구이</div>
+<div class="card-info"><b>대표메뉴:</b> 조개구이 · 키조개 삼합</div>
+<div class="card-info"><b>주소:</b> 대천해수욕장 일대</div>
+<div class="card-note">💡 7인 사전 예약 필요.</div>
+</div>
+
+<div class="card">
+<div class="card-title">🐟 아침 1순위: 서씨네큰댁</div>
+<div class="card-info"><b>대표메뉴:</b> 복지리탕 13,000원, 갈치조림 13,000원</div>
+<div class="card-info"><b>주소:</b> 충남 보령시 대천항로 313</div>
+<div class="card-info"><b>영업시간:</b> 07:00~20:00 (브레이크타임 14:30~17:00)</div>
+</div>
+</div>
+
+<!-- 3. 관광지 TAB -->
+<div id="spots" class="tab-content">
+<div class="card">
+<div class="card-title">1. 청라 은행마을</div>
+<div class="card-info"><b>가을 포인트:</b> 국내 최대급 은행나무 군락 (약 3천 그루)</div>
+<div class="card-info"><b>입장료/소요:</b> 무료 / 50분</div>
+<div class="card-info"><b>주소:</b> 충남 보령시 청라면 오서산길 150-65</div>
+</div>
+
+<div class="card">
+<div class="card-title">2. 오서산 자락 억새 (장전저수지)</div>
+<div class="card-info"><b>가을 포인트:</b> 저수지 주변 억새 산책 코스</div>
+<div class="card-info"><b>소요시간:</b> 30분</div>
+</div>
+
+<div class="card">
+<div class="card-title">3. 개화예술공원</div>
+<div class="card-info"><b>가을 포인트:</b> 단풍, 미술관, 조각공원, 허브랜드</div>
+<div class="card-info"><b>입장료/소요:</b> 3,000~7,000원 / 80분</div>
+<div class="card-info"><b>주소:</b> 충남 보령시 성주면 성주산로 673-47</div>
+</div>
+
+<div class="card">
+<div class="card-title">4. 죽도 상화원 (대안 코스)</div>
+<div class="card-info"><b>가을 포인트:</b> 섬 전체가 전통정원 및 2km 회랑</div>
+<div class="card-info"><b>입장료:</b> 7,000원 (할인 5,000원)</div>
+<div class="card-note">💡 주차공간이 협소하여 여유 있는 일정 필요.</div>
+</div>
+</div>
+
+<!-- 4. 예상 경비 TAB -->
+<div id="expenses" class="tab-content">
+<div class="card">
+<div class="card-title">💰 총 예상 경비 (7명 기준)</div>
+<table class="data-table">
+<thead>
+<tr>
+<th>항목</th>
+<th class="text-right">1인당</th>
+<th class="text-right">합계</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>점심 (게국지)</td>
+<td class="text-right">25,000원</td>
+<td class="text-right">175,000원</td>
+</tr>
+<tr>
+<td>저녁 (조개구이)</td>
+<td class="text-right">35,000원</td>
+<td class="text-right">245,000원</td>
+</tr>
+<tr>
+<td>아침 (복지리)</td>
+<td class="text-right">13,000원</td>
+<td class="text-right">91,000원</td>
+</tr>
+<tr>
+<td>개화예술공원</td>
+<td class="text-right">7,000원</td>
+<td class="text-right">49,000원</td>
+</tr>
+<tr>
+<td>카페 · 간식</td>
+<td class="text-right">10,000원</td>
+<td class="text-right">70,000원</td>
+</tr>
+<tr>
+<td>예비비 (10%)</td>
+<td class="text-right">9,000원</td>
+<td class="text-right">63,000원</td>
+</tr>
+<tr class="highlight">
+<td>합계 (숙소/유류비 제외)</td>
+<td class="text-right">99,000원</td>
+<td class="text-right">693,000원</td>
+</tr>
+</tbody>
+</table>
+<div class="card-note">💡 숙소 객실 요금 및 차량 유류/통행료 입력 시 합계에 반영됩니다.</div>
+</div>
+</div>
+
+<script>
+function openTab(tabName) {
+const contents = document.querySelectorAll('.tab-content');
+contents.forEach(content => content.classList.remove('active'));
+
+const buttons = document.querySelectorAll('.tab-btn');
+buttons.forEach(button => button.classList.remove('active'));
+
+document.getElementById(tabName).classList.add('active');
+event.currentTarget.classList.add('active');
+}
+</script>
+</body>
+</html>
